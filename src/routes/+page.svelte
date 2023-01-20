@@ -9,15 +9,15 @@
 	const accessTokenExpiresIn = session?.accessTokenExpiresIn
 	const sessionAsJson = JSON.stringify(session, null, 2)
 	const logOut = async () => {
-        await signOut({ redirect: false })
-        //@ts-expect-error: it's there
-        const idToken = session.idToken
-        const currentUri = encodeURIComponent(window.origin)
-        const keycloakFederatedLogOutUri =
-            PUBLIC_AUTH_ISSUER +
-            `/protocol/openid-connect/logout?post_logout_redirect_uri=${currentUri}` +
-            `&id_token_hint=${idToken}`
-        window.location.replace(keycloakFederatedLogOutUri)
+		await signOut({ redirect: false })
+		//@ts-expect-error: it's there
+		const idToken = session.idToken
+		const currentUri = encodeURIComponent(window.origin)
+		const keycloakFederatedLogOutUri =
+			PUBLIC_AUTH_ISSUER +
+			`/protocol/openid-connect/logout?post_logout_redirect_uri=${currentUri}` +
+			`&id_token_hint=${idToken}`
+		window.location.replace(keycloakFederatedLogOutUri)
 	}
 
 	if (session && browser) {
