@@ -29,7 +29,7 @@
 
 {#if session}
 	<strong>You are logged in</strong>
-	<div>Session expires in: {accessTokenExpiresIn}</div>
+	<div>Access token expires in: {accessTokenExpiresIn}</div>
 	<pre style="max-width: 800px; white-space: pre-wrap; word-break: break-all">{sessionAsJson}</pre>
 	<button on:click={logOut}>Logout</button>
 {:else}
